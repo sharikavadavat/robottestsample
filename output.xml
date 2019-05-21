@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190520 18:53:28.054" generator="Robot 3.1.1 (Python 2.7.10 on darwin)">
+<suite source="/Users/sharikavadavat/PycharmProjects/Test/Testcases/RegressionSuite.robot" id="s1" name="RegressionSuite">
+<test id="s1-t1" name="Valid Keyword Search">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://www.amazon.com</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20190520 18:53:28.644" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" endtime="20190520 18:53:33.084" starttime="20190520 18:53:28.644"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='twotabsearchtextbox']</arg>
+<arg>${validkeyword}</arg>
+</arguments>
+<msg timestamp="20190520 18:53:33.085" level="INFO">Typing text 'mobiles' into text field '//input[@id='twotabsearchtextbox']'.</msg>
+<status status="PASS" endtime="20190520 18:53:33.674" starttime="20190520 18:53:33.085"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@class='nav-input' and @type='submit']</arg>
+</arguments>
+<msg timestamp="20190520 18:53:33.675" level="INFO">Clicking element '//input[@class='nav-input' and @type='submit']'.</msg>
+<status status="PASS" endtime="20190520 18:53:36.131" starttime="20190520 18:53:33.675"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>results for "${validkeyword}"</arg>
+</arguments>
+<msg timestamp="20190520 18:53:36.192" level="INFO">Current page contains text 'results for "mobiles"'.</msg>
+<status status="PASS" endtime="20190520 18:53:36.192" starttime="20190520 18:53:36.131"></status>
+</kw>
+<kw name="And Page Should Not Contain" library="Selenium2Library">
+<doc>Verifies the current page does not contain ``text``.</doc>
+<arguments>
+<arg>No results for ${validkeyword}</arg>
+</arguments>
+<msg timestamp="20190520 18:53:36.566" level="INFO">Current page does not contain text 'No results for mobiles'.</msg>
+<status status="PASS" endtime="20190520 18:53:36.566" starttime="20190520 18:53:36.192"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>//span[@data-action='a-dropdown-button']</arg>
+</arguments>
+<msg timestamp="20190520 18:53:36.582" level="INFO">Current page contains element '//span[@data-action='a-dropdown-button']'.</msg>
+<status status="PASS" endtime="20190520 18:53:36.583" starttime="20190520 18:53:36.566"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190520 18:53:36.796" starttime="20190520 18:53:36.583"></status>
+</kw>
+<doc>This test is to validate the search with valid keywords</doc>
+<tags>
+<tag>Valid-Search</tag>
+</tags>
+<status status="PASS" endtime="20190520 18:53:36.797" critical="yes" starttime="20190520 18:53:28.643"></status>
+</test>
+<test id="s1-t2" name="Invalid Keyword Search">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://www.amazon.com</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20190520 18:53:36.800" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com'.</msg>
+<status status="PASS" endtime="20190520 18:53:42.126" starttime="20190520 18:53:36.799"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='twotabsearchtextbox']</arg>
+<arg>${invalidKeyword}</arg>
+</arguments>
+<msg timestamp="20190520 18:53:42.128" level="INFO">Typing text '1351515616' into text field '//input[@id='twotabsearchtextbox']'.</msg>
+<status status="PASS" endtime="20190520 18:53:42.867" starttime="20190520 18:53:42.127"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@class='nav-input' and @type='submit']</arg>
+</arguments>
+<msg timestamp="20190520 18:53:42.868" level="INFO">Clicking element '//input[@class='nav-input' and @type='submit']'.</msg>
+<status status="PASS" endtime="20190520 18:53:44.031" starttime="20190520 18:53:42.868"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>No results for ${invalidKeyword}</arg>
+</arguments>
+<msg timestamp="20190520 18:53:44.066" level="INFO">Current page contains text 'No results for 1351515616'.</msg>
+<status status="PASS" endtime="20190520 18:53:44.066" starttime="20190520 18:53:44.032"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190520 18:53:44.259" starttime="20190520 18:53:44.067"></status>
+</kw>
+<doc>This test is to validate the search with invalid keywords</doc>
+<tags>
+<tag>Invalid-Search</tag>
+</tags>
+<status status="PASS" endtime="20190520 18:53:44.260" critical="yes" starttime="20190520 18:53:36.798"></status>
+</test>
+<doc>This is a simple test for Robot Framework</doc>
+<status status="PASS" endtime="20190520 18:53:44.262" starttime="20190520 18:53:28.069"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Invalid-Search</stat>
+<stat fail="0" pass="1">Valid-Search</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="RegressionSuite" pass="2">RegressionSuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
